@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="padding-left: 50px;">Registrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<ion-card class="ion-padding" style="padding-left: 40px; padding-top: 20px;" >
+  <img src="assets/docente.png" style="height: 200px; width:200px; margin-left: 40px;"  > 
+  <ion-button color="botonmorado"  [routerLink]="['/registro-docentes']" >Registrar Docente</ion-button>
+</ion-card>
+<ion-card class="ion-padding" style="padding-left: 40px; padding-top: 20px; " >
+  <img src="assets/alumnis.png" style="height: 200px; width:160px; margin-left: 60px;"  > 
+  <ion-button color="botonmorado"  [routerLink]="['/registro-estudiante']" >Registrar Estudiante</ion-button>
+</ion-card>
+
+</ion-content>

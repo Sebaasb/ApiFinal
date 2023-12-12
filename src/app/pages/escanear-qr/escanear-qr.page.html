@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title style="padding-left: 15px;">Escanear Qr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="!bandera">
+    <p>Escaneando...</p>
+  </div>
+
+  <div *ngIf="bandera">
+    <p *ngIf="scannedResult" style="margin-left: 50px;  margin-top: 40%; font-size: large;">
+      <span style="font-weight: bold;">Resultado del escaneo:</span> {{ scannedResult }}
+    </p>
+
+    <p *ngIf="!scannedResult && bandera" style="margin-left: 50px; margin-top: 40%; font-size: large;">Escaneo cancelado
+      o sin contenido.</p>
+  </div>
+
+  <ion-button (click)="startScan()" color="botonmorado" *ngIf="bandera"
+    style="margin-left: 50px; margin-top: 50%;">INICIAR ESCANEO</ion-button>
+  <ion-button (click)="stopScan()" color="botonmorado" *ngIf="!bandera" style="margin-left: 50px;">DETENER ESCANEO</ion-button>
+
+    <ion-button (click)="generarAsistencia()" expand="block" color="botonmorado" style="margin-left: 50px;">
+      GUARDAR ASISTENCIA
+    </ion-button>
+</ion-content>

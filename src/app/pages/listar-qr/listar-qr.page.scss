@@ -1,0 +1,28 @@
+/* Estilos generales para la página */
+ion-content {
+    background-color: #f0f0f0; /* Color de fondo de la página */
+  }
+  
+  /* Estilos para los elementos de la lista de códigos */
+  .codigo-item {
+    border-bottom: 1px solid #ccc; /* Línea divisoria entre elementos */
+  }
+  
+  .codigo-label {
+    padding: 10px; /* Espaciado interno del contenedor de etiquetas */
+  }
+  
+  .codigo-asignatura {
+    color: #333; /* Color del nombre */
+    font-size: 1.2em; /* Tamaño de fuente del nombre */
+    font-weight: bold;
+    margin-bottom: 5px; /* Margen inferior del nombre */
+  }
+  
+  
+  .codigo-fecha {
+    color: #666; /* Color de la asignatura y la fecha */
+    font-size: 1.0em; /* Tamaño de fuente de la asignatura y la fecha */
+    margin-bottom: 3px; /* Margen inferior de la asignatura y la fecha */
+  }
+  

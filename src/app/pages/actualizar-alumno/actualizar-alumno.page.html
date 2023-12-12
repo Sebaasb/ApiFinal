@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title style="padding-left: 10px;">Editar Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+   
+  </ion-card>
+
+  <form>
+
+
+    <ion-item>
+      <ion-label position="floating"><strong>Nombre:</strong> </ion-label>
+      <ion-input type="text" name="txtnombre" [(ngModel)]="alumno.nombre" ></ion-input>
+    </ion-item> 
+
+    <ion-item>
+      <ion-label position="floating"><strong>Rut:</strong> </ion-label>
+      <ion-input type="text" name="txtrut" [(ngModel)]="alumno.rut" ></ion-input>
+    </ion-item> 
+
+    <ion-item>
+      <ion-label position="floating" ><strong>Email:</strong> </ion-label>
+      <ion-input type="email" name="txtEmail" [(ngModel)]="alumno.email" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"><strong>Password:</strong> </ion-label>
+      <ion-input type="password" name="txtPass" [(ngModel)]="alumno.password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"><strong>Sede:</strong> </ion-label>
+      <ion-input type="text" name="txtsede" [(ngModel)]="alumno.sede" ></ion-input>
+    </ion-item> 
+
+    <ion-item>
+      <ion-label position="floating"><strong>Jornada:</strong> </ion-label>
+      <ion-input type="text" name="txtjornada" [(ngModel)]="alumno.jornada" ></ion-input>
+    </ion-item> 
+
+
+    <ion-item>
+      <ion-label position="floating"><strong>Rol:</strong> </ion-label>
+      <ion-input type="text" name="txtRol" [(ngModel)]="alumno.role" disabled></ion-input>
+    </ion-item>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="ActualizarAlumno()" color="botonmorado" style="margin-left: 50px;">Actualizar Datos</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

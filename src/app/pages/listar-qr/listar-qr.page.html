@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+       <ion-button (click)="MostrarMenu()">  
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="'/qr-generar'">Volver</ion-button>
+    </ion-buttons>
+
+
+    <ion-title style="padding-left: 50px;">QR Almacenados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let codigo of codigos" [routerLink]="[]" class="codigo-item">
+      <ion-label class="codigo-label">
+        
+        <h2 class="codigo-asignatura">{{ codigo.asignatura }}</h2>
+        <p class="codigo-fecha">{{ codigo.fecha }}</p>
+        <p class="codigo-fecha">{{ codigo.nombre }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

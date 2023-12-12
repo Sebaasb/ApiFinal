@@ -1,0 +1,7 @@
+{
+  "name": "PruebaDos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

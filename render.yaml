@@ -1,0 +1,11 @@
+services:
+  - name: api-service
+    buildCommand: cd ApiTest && npm install
+    startCommand: cd ApiTest && json-server
+    env:
+      - key: DATABASE_FILE
+        value: ./ApiTest/db.json
+
+  - name: angular-app
+    buildCommand: cd PruebaDos && npm install && ng build --prod
+    startCommand: cd PruebaDos && npm install && ng serve --host 0.0.0.0

@@ -1,0 +1,152 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="padding-left: 50px;">Registrar</ion-title>
+  </ion-toolbar>
+</ion-header> registroDocente
+
+<ion-content [fullscreen]="true">
+  <div class="form-input ion-padding">
+    <form [formGroup]="registroDocente">
+<!-- Registro Docente -->
+      <ion-item>
+        <ion-label class="ion-label" position="floating">Nombre Completo: </ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <div *ngIf="registroDocente.get('nombre')?.invalid && (registroDocente.get('nombre')?.dirty || registroDocente.get('nombre')?.touched)">
+        <div style="color: red" *ngIf="registroDocente.get('nombre')?.hasError('required')">
+          Indique su nombre completo
+        </div>
+        <div style="color: red" *ngIf="registroDocente.get('nombre')?.hasError('minlength')">
+          El nombre completo debe tener al menos 10 caracteres
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-label class="ion-label" position="floating">Email: </ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <div *ngIf="registroDocente.get('email')?.invalid && (registroDocente.get('email')?.dirty || registroDocente.get('email')?.touched)">
+        <div style="color: red" *ngIf="registroDocente.get('email')?.hasError('required')">
+          Indique su correo electrónico
+        </div>
+        <div style="color: red" *ngIf="registroDocente.get('email')?.hasError('email')">
+          El correo electrónico no es válido
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-label class="ion-label" position="floating">Contraseña: </ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <div *ngIf="registroDocente.get('password')?.invalid && (registroDocente.get('password')?.dirty || registroDocente.get('password')?.touched)">
+        <div style="color: red" *ngIf="registroDocente.get('password')?.hasError('required')">
+          Indique su contraseña
+        </div>
+        <div style="color: red" *ngIf="registroDocente.get('password')?.hasError('minlength')">
+          La contraseña debe tener al menos 8 caracteres
+        </div>
+      </div>
+
+<!-- Registro ASIGNATURAS -->
+<div formArrayName="asignaturas">
+  <div *ngFor="let asignatura of asignaturaControls; let i=index;" [formGroupName]="i">
+    <p style="color:blue; font-weight: bold; text-align: center;">Asignatura N° {{i+1}}:</p>
+
+    <ion-item>
+      <ion-label class="ion-label" position="floating">Nombre asignatura: </ion-label>
+      <ion-input type="text" formControlName="nombreAsignatura"></ion-input>
+    </ion-item>
+    
+    <div *ngIf="asignatura.get('nombreAsignatura')?.invalid && (asignatura.get('nombreAsignatura')?.dirty || asignatura.get('nombreAsignatura')?.touched)">
+      <div style="color: red" *ngIf="asignatura.get('nombreAsignatura')?.hasError('required')">
+        El nombre de la asignatura es obligatorio.
+      </div>
+      <div style="color: red" *ngIf="asignatura.get('nombreAsignatura')?.hasError('minlength')">
+        La asignatura debe tener al menos 6 caracteres
+      </div>
+    </div>
+      
+      <ion-item>
+        <ion-label class="ion-label" position="floating">Seccion: </ion-label>
+        <ion-input type="text" formControlName="seccion"></ion-input>
+      </ion-item>
+      
+      <div *ngIf="asignatura.get('seccion')?.invalid && (asignatura.get('seccion')?.dirty || asignatura.get('seccion')?.touched)">
+        <div style="color: red" *ngIf="asignatura.get('seccion')?.hasError('required')">
+          La sección es obligatoria.
+        </div>
+        <div style="color: red" *ngIf="asignatura.get('seccion')?.hasError('minlength')">
+          La sección debe tener al menos 3 caracteres
+        </div>
+      </div>
+      
+      <ion-item>
+        <ion-label class="ion-label" position="floating">Horas Semanales: </ion-label>
+        <ion-input type="text" formControlName="horas"></ion-input>
+      </ion-item>
+      
+      <div *ngIf="asignatura.get('horas')?.invalid && (asignatura.get('horas')?.dirty || asignatura.get('horas')?.touched)">
+        <div style="color: red" *ngIf="asignatura.get('horas')?.hasError('required')">
+          Las horas semanales son obligatorias.
+        </div>
+        <div style="color: red" *ngIf="asignatura.get('horas')?.hasError('minlength')">
+          Las horas semanales deben tener al menos 1 caracter
+        </div>
+      </div>
+      
+      <ion-item>
+        <ion-label class="ion-label" position="floating">Año: </ion-label>
+        <ion-input type="text" formControlName="año"></ion-input>
+      </ion-item>
+      
+      <div *ngIf="asignatura.get('año')?.invalid && (asignatura.get('año')?.dirty || asignatura.get('año')?.touched)">
+        <div style="color: red" *ngIf="asignatura.get('año')?.hasError('required')">
+          El año es obligatorio.
+        </div>
+        <div style="color: red" *ngIf="asignatura.get('año')?.hasError('minlength')">
+          El año debe tener al menos 4 caracter
+        </div>
+      </div>
+      
+      <ion-item>
+        <ion-label class="ion-label" position="floating">Semestre: </ion-label>
+        <ion-input type="text" formControlName="semestre"></ion-input>
+      </ion-item>
+      
+      <div *ngIf="asignatura.get('semestre')?.invalid && (asignatura.get('semestre')?.dirty || asignatura.get('semestre')?.touched)">
+        <div style="color: red" *ngIf="asignatura.get('semestre')?.hasError('required')">
+          El semestre es obligatorio.
+        </div>
+        <div style="color: red" *ngIf="asignatura.get('semestre')?.hasError('minlength')">
+          El semestre debe tener al menos 5 caracter
+        </div>
+      </div>
+            
+         </div> 
+          
+        </div>
+  
+      <ion-button (click)="agregarAsignatura()" expand="block" color="success">
+        Agregar Asignatura
+      </ion-button>
+  
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="crearDocente()" expand="block" color="primary" >Registrar Docente</ion-button>
+        </ion-col>
+      </ion-row>
+  
+    </form>
+  </div>
+
+  </ion-content>
+

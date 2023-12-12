@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+       <ion-button (click)="MostrarMenu()">  <!-- nombre del metodo que se crea-->
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-title style="padding-left: 50px;">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+
+    <img src="assets/logoo.png" class="ion-padding" style="padding-left: 80px; padding-top: 60px;"  >
+  
+    <ion-button color="botonmorado" [routerLink]="['/login-docente']" style="margin-left: 60px; ">INICIAR SESIÓN DOCENTE</ion-button>
+    <ion-button color="botonmorado"  [routerLink]="['/login-alumno']" style="margin-left: 60px; ">INICIAR SESIÓN ALUMNO</ion-button>
+    <ion-button [routerLink]="['/registro-general']" fill="clear" style="margin-left: 100px; margin-top: 0.5px;">REGISTRARSE</ion-button>
+  
+
+
+
+</ion-content>

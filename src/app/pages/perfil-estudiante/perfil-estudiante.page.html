@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title style="padding-left: 10px;">Perfil Estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Mitad superior de un color -->
+
+  <div class="color-background" style="padding-top: 90px; padding-left: 20px; padding-right: 20px; ">
+    
+    <ion-card >
+      <img src="assets/prrr.png" class="ion-padding" style="padding-left: 10px; padding-top: 10px;  padding-right: 10px; ">
+    </ion-card>
+  </div>
+
+  <!-- Mitad inferior de otro color con datos del usuario -->
+  <div class="white-background">
+    <!-- Datos del usuario -->
+    
+  </div>
+  
+  <div class="datos">
+    <ion-card>
+      <ion-item>
+        <ion-label wrap="true"><strong>Nombre:</strong> {{ alumno.nombre }}</ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label wrap="true"><strong>Email:</strong> {{ alumno.email }}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label wrap="true"><strong>Rut:</strong> {{ alumno.rut }}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label wrap="true"><strong>Sede:</strong> {{ alumno.sede }}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label wrap="true"><strong>Jornada:</strong> {{ alumno.jornada }}</ion-label>
+      </ion-item>
+            
+      <ion-item>
+        <ion-label wrap="true"><strong>Rol:</strong> {{ 'Alumno' }}</ion-label>
+      </ion-item> 
+  
+
+      <ion-button *ngIf="alumno.id" style="margin: 50px" 
+      [routerLink]="['/actualizar-alumno', alumno.id]" color="botonmorado">
+        EDITAR DATOS
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+      
+  </ion-card>
+  </div>
+
+</ion-content>

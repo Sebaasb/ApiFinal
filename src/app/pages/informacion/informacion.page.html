@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+       <ion-button (click)="MostrarMenu()">  <!-- nombre del metodo que se crea-->
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-title style="padding-left: 40px;">Información</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img src="assets/codigo-qr.jpg">
+    <ion-card-header>
+      <ion-card-title style="color:royalblue; font-weight: bolder;">RegistrApp</ion-card-title>
+      <ion-card-subtitle>Utilidades de educación</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+
+      <p> RegistrAPP es una aplicación móvil diseñada para alumnos y docentes de DuocUC permitiendo abordar los desafíos en el registro de asistencia.</p>
+      <p>Los usuarios pueden escanear o generar códigos QR para un registro rápido y eficiente,
+      simplificando el proceso y minimizando errores.</p>
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

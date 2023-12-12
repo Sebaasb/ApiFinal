@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+       <ion-button (click)="MostrarMenu()">  <!-- nombre del metodo que se crea-->
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-title style="padding-left: 50px;">Feriados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size ="12" *ngFor ="let feriado of feriados">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title style="font-size: large; font-weight: bold;">{{feriado.title}}</ion-card-title>
+            <ion-card-subtitle>{{feriado.date}}</ion-card-subtitle>
+            
+            <ion-card-subtitle>{{feriado.extra}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+

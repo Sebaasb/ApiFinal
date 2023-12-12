@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title style="padding-left: 10px;">Editar Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+   
+  </ion-card>
+
+  <form>
+
+
+    <ion-item>
+      <ion-label position="floating"><strong>Nombre:</strong> </ion-label>
+      <ion-input type="text" name="txtnombre" [(ngModel)]="docente.nombre" ></ion-input>
+    </ion-item> 
+
+    <ion-item>
+      <ion-label position="floating" ><strong>Email:</strong> </ion-label>
+      <ion-input type="email" name="txtEmail" [(ngModel)]="docente.email" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"><strong>Password:</strong> </ion-label>
+      <ion-input type="password" name="txtPass" [(ngModel)]="docente.password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating"><strong>Rol:</strong> </ion-label>
+      <ion-input type="text" name="txtRol" [(ngModel)]="docente.role" disabled></ion-input>
+    </ion-item>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="ActualizarUsuario()" color="botonmorado" style="margin-left: 50px;">Actualizar Datos</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
