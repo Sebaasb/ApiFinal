@@ -1,7 +1,7 @@
 services:
   - name: api-service
     buildCommand: cd ApiTest && npm install
-    startCommand: cd ApiTest && json-server
+    startCommand: cd ApiTest && npm install && npm start
     env:
       - key: DATABASE_FILE
         value: ./ApiTest/db.json

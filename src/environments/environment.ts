@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  // apiURL: "http://localhost:3300"
-  apiURL: "https://apitest-6h7t.onrender.com"
+   apiURL: "http://localhost:3300"
 };
 /*
  * For easier debugging in development mode, you can import the following file
